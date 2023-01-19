@@ -32,6 +32,24 @@ export const onShowCarSuccess = (car) => {
         <p>${car.class}</p>
         <p>${car.drive}</p>
         <p>${car._id}</p>
+
+        <form data-id="${car._id}">
+            <input type="text" name="make" value="${car.make}" />
+            <input type="text" name="model" value="${car.model}" />
+            <input type="text" name="class" value="${car.class}" />
+            <input type="number" name="drive" value="${car.drive}" />
+            <input type="submit" value="Update Car" />
+        </form>
+
+        <button type="button" data-id="${car._id}">Delete Car</button>
     `
     showCarContainer.appendChild(div)
+}
+
+export const onUpdateCarSuccess = () => {
+    messageContainer.innerText = 'Update was successful :)'
+}
+
+export const onDeleteCarSuccess = () => {
+    messageContainer.innerText = 'Delete was successful :)'
 }

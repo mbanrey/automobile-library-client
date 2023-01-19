@@ -18,3 +18,20 @@ export const createCar = (data) =>{
 export const showCar = (id) =>{
     return fetch(`http://localhost:8000/cars/${id}`)
 }
+
+export const updateCar = (data, id) => {
+    return fetch(`http://localhost:8000/cars/${id}`, {
+        method: 'PATCH',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+}
+
+export const deleteCar = (id) => {
+    return fetch(`http://localhost:8000/cars/${id}`, {
+        method: 'DELETE'
+    })
+}
